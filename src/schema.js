@@ -28,7 +28,11 @@ const typeDefs = gql`
     title: String!
     author: Author!
     thumbnail: String
-    length: Int
+    "Modules video duration in seconds"
+    durationInSeconds: Int
+    durationInMinutes: Int
+    durationInHours: Float
+    length: Int @deprecated(reason: "use durationInSeconds")
     modulesCount: Int
     modules: [Module!]!
     description: String
