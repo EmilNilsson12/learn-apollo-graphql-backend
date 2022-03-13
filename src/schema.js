@@ -31,6 +31,7 @@ const typeDefs = gql`
     "Modules video duration in seconds"
     durationInSeconds: Int
     durationInMinutes: Int
+    "Modules video duration in hours"
     durationInHours: Float
     length: Int @deprecated(reason: "use durationInSeconds")
     modulesCount: Int
