@@ -1,4 +1,4 @@
-import { gql } from 'apollo-server';
+const { gql } = require('apollo-server');
 
 // This file defines the fields that are chosen to be used in the query
 // There are additional fields available on the Track object
@@ -49,4 +49,4 @@ const typeDefs = gql`
   }
 `;
 
-export { typeDefs };
+module.exports = typeDefs;

@@ -1,8 +1,7 @@
-//TODO
-import { ApolloServer } from 'apollo-server';
-import { typeDefs } from './schema.mjs';
-import { resolvers } from './resolvers.mjs';
-import { TrackAPI } from './datasources/track-api.mjs';
+const { ApolloServer } = require('apollo-server');
+const typeDefs = require('./schema.js');
+const resolvers = require('./resolvers.js');
+const TrackAPI = require('./datasources/track-api.js');
 
 // ApolloServer takes an object as argument
 // called Constructor object
