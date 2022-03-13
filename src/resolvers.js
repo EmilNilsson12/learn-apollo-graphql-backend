@@ -13,6 +13,9 @@ const resolvers = {
     track: (_, { id }, { dataSources }) => {
       return dataSources.trackAPI.getTrack(id);
     },
+    module: (_, { id }, { dataSources }) => {
+      return dataSources.trackAPI.getModule(id);
+    },
   },
   Mutation: {
     incrementTrackViews: async (_, { id }, { dataSources }) => {
@@ -45,6 +48,11 @@ const resolvers = {
     durationInSeconds: ({ length }) => length,
     durationInMinutes: ({ length }) => Math.ceil(length / 60),
     durationInHours: ({ length }) => (length / 60 / 60).toFixed(2),
+  },
+  Module: {
+    track: ({ trackId }, _, { dataSources }) => {
+      return dataSources.trackAPI.getTrack(trackId);
+    },
   },
 };
 

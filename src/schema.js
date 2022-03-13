@@ -9,6 +9,7 @@ const typeDefs = gql`
   type Query {
     tracksForHome: [Track!]!
     track(id: ID!): Track
+    module(id: ID!): Module
   }
 
   type Mutation {
@@ -26,6 +27,7 @@ const typeDefs = gql`
   type Track {
     id: ID!
     title: String!
+    "Resolves Author from resolver chain"
     author: Author!
     thumbnail: String
     "Modules video duration in seconds"
@@ -35,6 +37,7 @@ const typeDefs = gql`
     durationInHours: Float
     length: Int @deprecated(reason: "use durationInSeconds")
     modulesCount: Int
+    "Resolves [Module] from resolver chain"
     modules: [Module!]!
     description: String
     numberOfViews: Int
@@ -51,6 +54,10 @@ const typeDefs = gql`
     id: ID!
     title: String!
     length: Int
+    "Resolves Track from resolver chain"
+    track: Track
+    content: String
+    videoUrl: String
   }
 `;
 
